@@ -1,0 +1,4 @@
+Author: Khaled Talaat
+Contents:
+AnubisCaseInput.zip <- Unpack this first thing (these are the Anubis input files for the cases)
+initialcases <- Some of the files herein are packed and split to volumes to mitigate restrictions on individual file size limits (these are the CFD and MCNP input files for the initial cases before coupling). You must unpack before you run the examples.

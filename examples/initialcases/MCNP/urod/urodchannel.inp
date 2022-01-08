@@ -1,0 +1,68 @@
+Water Cooled Uranium Rod Fuel Channel
+c     cell cards
+1     1 -19.1 -100 -2 3 imp:n=1 $ U Pellet
+2     1 -19.1 -101 -3 4 imp:n=1 $ U Pellet
+3     1 -19.1 -102 -4 5 imp:n=1 $ U Pellet
+4     1 -19.1 -103 -5 6 imp:n=1 $ U Pellet
+5     1 -19.1 -104 -6 7 imp:n=1 $ U Pellet
+6     1 -19.1 -105 -7 8 imp:n=1 $ U Pellet
+7     1 -19.1 -106 -8 9 imp:n=1 $ U Pellet
+8     1 -19.1 -107 -9 10 imp:n=1 $ U Pellet
+9     1 -19.1 -108 -10 11 imp:n=1 $ U Pellet
+10     1 -19.1 -109 -11 12 imp:n=1 $ U Pellet
+11     2 -1.0 100 -2 3 13 -14 15 -16 imp:n=1 $ Water
+12     2 -1.0 101 -3 4 13 -14 15 -16 imp:n=1 $ Water
+13     2 -1.0 102 -4 5 13 -14 15 -16 imp:n=1 $ Water
+14     2 -1.0 103 -5 6 13 -14 15 -16 imp:n=1 $ Water
+15     2 -1.0 104 -6 7 13 -14 15 -16 imp:n=1 $ Water
+16     2 -1.0 105 -7 8 13 -14 15 -16 imp:n=1 $ Water
+17     2 -1.0 106 -8 9 13 -14 15 -16 imp:n=1 $ Water
+18     2 -1.0 107 -9 10 13 -14 15 -16 imp:n=1 $ Water
+19     2 -1.0 108 -10 11 13 -14 15 -16 imp:n=1 $ Water
+20     2 -1.0 109 -11 12 13 -14 15 -16 imp:n=1 $ Water
+21     0 -13:14:-15:16:2:-12 imp:n=0 $ outside world
+
+c     surface cards
+100     cz  0.5
+101     cz  0.5
+102     cz  0.5
+103     cz  0.5
+104     cz  0.5
+105     cz  0.5
+106     cz  0.5
+107     cz  0.5
+108     cz  0.5
+109     cz  0.5
+2     pz  50.00000
+3     pz  40.00000
+4     pz  30.00000
+5     pz  20.00000
+6     pz  10.00000
+7     pz  0.000001
+8     pz -10.00000
+9     pz -20.00000
+10     pz -30.00000
+11     pz -40.00000
+12     pz -50.00000
+*13     px -0.700000
+*14     px 0.700000
+*15     py -0.700000
+*16     py 0.700000
+
+c     data cards
+mode n $ transport neutrons only
+c 
+c     material cards
+m1     92235.70c -0.035 $U235
+       92238.70c -0.965  $U238
+m2     8016.70c 1.0  $O
+       1001.70c 2.0  $H
+C     Criticality Control Cards
+kcode 100000 1.0 100 500
+ksrc    0.0 0.0 6
+        0.0 0.0 0.0
+        0.0 0.0 6 $ 3 initial source locations
+F7:N 1 2 3 4 5 6 7 8 9 10
+F6:N 1 2 3 4 5 6 7 8 9 10
+
+prdmp j 20 0 1 20 $  dump every 20 cycles,do not write mctal,save only last dump, write tfc every 20 cycles
