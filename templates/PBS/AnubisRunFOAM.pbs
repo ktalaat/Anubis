@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -lnodes=*NODECOUNT*:ppn=*CORECOUNT*
+#PBS -N *JOBTITLE*
+#PBS -lwalltime=*WALLTIME*
+#PBS -S /bin/bash
+module load *MODULENAME*
+export PROCS=`cat $PBS_NODEFILE | wc -l`
+cd $PBS_O_WORKDIR
+decomposePar -case *FOAMCASE* -allRegions
+time mpirun -np $PROCS -machinefile $PBS_NODEFILE *FOAMSOLVER* -case *FOAMCASE* -parallel
+reconstructPar -case *FOAMCASE* -allRegions

@@ -1,0 +1,9 @@
+#!/bin/bash
+#PBS -lnodes=*NODECOUNT*:ppn=*CORECOUNT*
+#PBS -N *JOBTITLE*
+#PBS -lwalltime=*WALLTIME*
+#PBS -S /bin/bash
+module load *MODULENAME*
+export PROCS=`cat $PBS_NODEFILE | wc -l`
+cd $PBS_O_WORKDIR
+mcnp6 inp=*MCNPINFILE* outp=*MCNPOUTFILE* tasks $PROCS

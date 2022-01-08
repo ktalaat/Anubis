@@ -1,0 +1,34 @@
+Axially reflected cylinder
+c     cell cards
+1     1 .125115582 -1 -2 3 imp:n=1 $ UO2/Poly cylinder
+2     2 .08023 2 -4 -1 imp:n=1 $ Top Graphite reflector
+3     3 .08023 -3 5 -1 imp:n=1 $ Bottom Graphite reflector
+4     0 1:4:-5 imp:n=0 $ outside world
+
+c     surface cards
+1     cz  32.1
+2     pz  11.34375
+3     pz -11.34375
+4     pz  31.34375
+5     pz -31.34375
+
+c     data cards
+mode n $ transport neutrons only
+c 
+c     material cards
+m1     92235.60c .000152541 $U235
+       92238.60c .00061199  $U238
+       8016.60c .001528543  $O
+       6000.60c .040922572  $C
+       1001.60c .081899937  $H
+m2     6000.60c 1.0 $C reflector
+m3     6000.60c 1.0 $C reflector
+C     Criticality Control Cards
+kcode 20000 1.0 100 250
+ksrc    0.0 0.0 6
+        0.0 0.0 0.0
+        0.0 0.0 6 $ 3 initial source locations
+F7:N 1 2 3
+F6:N 1 2 3
+
+prdmp j 20 0 1 20 $  dump every 20 cycles,do not write mctal,save only last dump, write tfc every 20 cycles

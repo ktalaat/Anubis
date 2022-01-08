@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -lnodes=*NODECOUNT*:ppn=*CORECOUNT*
+#PBS -N *JOBTITLE*
+#PBS -lwalltime=*WALLTIME*
+#PBS -S /bin/bash
+SIM=*CCMFILE*
+PROCS=$(cat $PBS_NODEFILE | wc -l)
+ALT_PROCS=$PBS_NP
+source /etc/profile.d/lmod.sh
+module load *MODULENAME*
+SHORT_JOBID=$(echo $PBS_JOBID | awk -F. '{print $1}')
+TIME='Time: %E\n Mem: %M\n Swap: %W\n I/O: %I/%O\n'
+cd $PBS_O_WORKDIR
+echo Simulation ${SIM} Procs: ${PROCS} Job ID: ${SHORT_JOBID}
+echo starting StarCCM+ at $(date)
+/usr/bin/time -o time.log \
+	starccm+ -np $PROCS -rsh ssh -machinefile $PBS_NODEFILE -batch *ANUBISJAVAPATH* $SIM -licpath *LICENSEPATH*
+echo Finished running StarCCM+ at `date`
+echo timing information:
+cat time.log

@@ -1,0 +1,19 @@
+{
+	"regions": {
+		"bottomreflector": {
+						"MCNPCellID": "3",
+						"MCNPInitialTemp": "300",
+						"materialsDBID": "mat92_7"
+					 },
+		"core": {
+						"MCNPCellID": "1",
+						"MCNPInitialTemp": "250",
+						"materialsDBID": "mat92_7"						
+					 },					 
+		"topreflector": {
+						"MCNPCellID": "2",
+						"MCNPInitialTemp": "250",
+						"materialsDBID": "mat75"						
+					 }	 
+		}
+}

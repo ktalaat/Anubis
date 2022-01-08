@@ -1,0 +1,19 @@
+Author: Khaled Talaat (ktalaat@unm.edu)
+Subject: About the examples
+
+In this folder you will find examples for local and remote runs for cases involving OpenFOAM and STAR-CCM+ coupled to MCNP6. 
+
+Example 1: cylinders
+-This is a 3 region toy problem. The model features a very low power cylindrical core surrounded by reflectors from top and bottom. 
+-The problem in this example is not set up to represent anything physically meaningful but rather it serves to allow you to test the coupling, remote connection, and understand the configuration for an Anubis case in a very simple system. 
+-It should run in less than 10 minutes on most systems (remote runs can be slower because of queue and check times).
+-Different variants of the problem with different inputs are defined for demonstration (e.g. to explain local vs. remote runs, to vary the coupling configuration and operating system, etc.)
+-The STAR-CCM+ and OpenFOAM cases defined are not intended to be equivalent.
+
+Example 2: UROD
+-This example features a 10 region uranium rod in water with reflecting boundaries in MCNP and symmetry boundary in CFD. It is a slightly more realistic example and is provided for STAR-CCM+ only here.
+-It serves to verify that Anubis does what it purports to do in terms of coupling and data transfer.
+-Two surfaceExpansion.json files are provided for demonstration of different ways to provide the same input. The active one is effectively surfaceExpansion.json.
+-The mesh is not generated. You must generate the mesh first before you attempt to run the case.
+-This problem will take 5 days if you run it locally on a typical 32 core computer.
+-Remote run on a cluster is recommended.
