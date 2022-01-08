@@ -14,8 +14,6 @@ Anubis is a semi-modular, geometry-blind, and multi-server loose coupling utilit
 • SSHPASS is required for local runs of STAR-CCM+ on Linux.<br />
 • To run jobs on remote servers, you must set up key based authentication by copying your RSA public key to authorized_keys in the remote host (see https://www.adminschoice.com/how-to-configure-ssh-without-password). Basically run ssh-keygen -t rsa and copy key from users/[yourusername]/.ssh folder to your .ssh/authorized_keys on your other machine and make sure that you are the only owner of all directories above .ssh starting from your own user directory and you must be the only one with write permission. If a folder is assigned group permission to write, remote connection will not work.<br />
 • The remote server must use a Portable Batch System (PBS) for job scheduling. MATLAB is not required on the remote server. You only need to run Anubis on the client.<br />
-# Supported MCNP Surface Cards
-Anubis recognizes the following surface mnemonics/cards in MCNP: "P","PX","PY","PZ","SO","S","SX","SY","SZ","C/X","C/Y","C/Z","CX","CY","CZ","K/X","K/Y","K/Z","KX","KY","KZ","SQ","GQ","TX","TY","TZ","X","Y","Z","P","BOX","RPP","SPH","RCC","RHP","HEX","REC","TRC","ELL","WED","ARB". Reflecting surfaces marked by * and white boundaries marked by + are also recognized. Any other surface types are not recognized and will cause errors.
 # Demo Video
 https://www.youtube.com/watch?v=ryh8aY8VFNo
 # Examples
