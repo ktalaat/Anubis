@@ -6,7 +6,7 @@ External coupling of steady state Monte Carlo neutron transport and computationa
 Anubis is a semi-modular, geometry-blind, and multi-server loose coupling utility that iteratively maps temperature and energy field effects between MCNP6 and OpenFOAM or STAR-CCM+ until convergence criteria are met. More specifically, Anubis transfers the steady state unnormalized prompt power profile from MCNP to CFD and uses the calculated temperature field from CFD to update the cross-section library, densities, and surface parameters in MCNP based on pre-defined user input. Anubis jobs can be local, entirely remote on one or more servers, or hybrid (i.e. it can run one program locally and one program remotely).
 # Compatibility and Prerequisites
 • Anubis is compatible with Windows 10 and Linux (tested on Ubuntu locally and remotely on CentOS). Mac is not supported.<br />
-• MATLAB R2021b or later release is required. Remote coupling in Anubis is not compatible with older version of MATLAB that did not directly support SFTP. <br />
+• MATLAB R2021b or later release is required. Remote coupling in Anubis is not compatible with older versions of MATLAB that did not directly support SFTP. <br />
 • MCNP6, OpenFOAM, and STAR-CCM+ are not distributed with Anubis. You need MCNP6 and either of OpenFOAM or STAR-CCM+.<br />
 • MCNP6 is an export-controlled code. If you do not have MCNP, please see https://mcnp.lanl.gov/mcnp_how_to_get_to_mcnp.shtml. <br />
 • Anubis has been tested with MCNP6.1. Older versions of MCNP are not supported.<br />
