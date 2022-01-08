@@ -14,6 +14,9 @@ Anubis is a semi-modular, geometry-blind, and multi-server loose coupling utilit
 • SSHPASS is required for local runs of STAR-CCM+ on Linux.<br />
 • To run jobs on remote servers, you must set up key based authentication by copying your RSA public key to authorized_keys in the remote host (see https://www.adminschoice.com/how-to-configure-ssh-without-password). Basically run ssh-keygen -t rsa and copy key from users/[yourusername]/.ssh folder to your .ssh/authorized_keys on your other machine and make sure that you are the only owner of all directories above .ssh starting from your own user directory and you must be the only one with write permission. If a folder is assigned group permission to write, remote connection will not work.<br />
 • The remote server must use a Portable Batch System (PBS) for job scheduling. MATLAB is not required on the remote server. You only need to run Anubis on the client.<br />
+# Setup
+• No installation is required. Just add Anubis and all sub-folders to your MATLAB path.
+• Make sure all prerequisites to features that you are using are installed and default Bash aliases are defined.
 # Demo Video
 https://www.youtube.com/watch?v=ryh8aY8VFNo
 # Examples
